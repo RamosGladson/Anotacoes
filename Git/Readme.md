@@ -2,7 +2,6 @@
 >É um versionador de arquivos.
 
 Git é um versionador de arquivos que pode ser usado por uma pessoa ou um time de desenvolvimento. Foi criado com a finalidade de facilitar o desenvolvimento de softwares, mas pode ser usado com várias finalidades, de versionador de arquivos de imagens para designers até como um caderno de anotações, com acesso local ou global (através do github, desde que tenha acesso a internet).
->Github é um servidor git remoto
 
 Alguns exempos de comandos no git:
 ```
@@ -181,17 +180,17 @@ Shields são selos dinamicos de metadados que poderão ser gerados através do s
 
 Funciona de maneira parecida com o HTML.
 
-### Header (equivalente aos <h1><h2><h3> )
->usamos hashtag para títulos.
+### Header (h1, h2 e h3)
+>usamos hashtags para títulos.
 
-A quantidade de hashtag define a hierarquia do título
+A quantidade de hashtags define a hierarquia do título
 ```
 #
 ## 
-##
+###
 ```
 
-### Ênfase (equivalente ao **negrito** <b>), *itálico* <i> e ~~riscado~~ <strike>)
+### Ênfase (b, i e ~~riscado~~)
 
 ```
 *itálico*
@@ -205,7 +204,7 @@ __negrito__
 **_negrito e itálico_**
 ```
 
-### Lista ordenada (equivalente ao <ol>)
+### Lista ordenada (ol)
 
 ```
 1. Um ponto
@@ -214,7 +213,7 @@ __negrito__
 4. Quatro ponto
 ```
 
-### Lista não ordenada (equivalente ao <ul>)
+### Lista não ordenada (ul)
 
 ```
 - Arroz
@@ -226,7 +225,7 @@ Da mesma meira
 * Feijão
 ```
 
-### Links (equivalente ao <a>)
+### Links (a href)
 
 Podemos usar assim:
 ```
@@ -245,7 +244,7 @@ E definir google-url e github-url ao final do arquivo assim (também funciona pa
 [github-url]: https://github.com
 ```
 
-### Quotes (equivalente ao <blockquote>)
+### Quotes (blockquote)
 >Uma anotação assim.
 
 ```
@@ -281,7 +280,7 @@ aqui vai o código
 "```"
 ```
 
-### Tabelas (equivalente ao <table>)
+### Tabelas (table)
 
 Em markdown temos que basicamente desenhar a tabela, porém existe uma ferramenta que pode facilitar e muito esse trabalho, [gerador][table-gerador].
 
@@ -314,8 +313,8 @@ A direita:
 |---------:|
 ```
 
-### Imagens e gifs (equivalente ao <img src="caminho"> que também pode ser usada)
->Com a tag html podemos definir atributos de altura e largura.
+### Imagens e gifs (img src="caminho")
+>Podemos usar a tag html e definir atributos de altura e largura.
 
 A inclusão de imagens funciona com ! como marcador, seguido de [] e (com o caminho)
 ```
@@ -346,4 +345,4 @@ O arquivo readme orienta o usuário na utilização do repositório, em geral, i
 [bader-readme]: https://github.com/dbader/readme-template
 [thompson-readme]: https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
 [villanueva-readme]: https://gist.github.com/Villanuevand/6386899f70346d4580c723232524d35a
-[assis-shield]: https://www.youtube.com/watch?v=hQb0I3M2BuQ
+[assis-shields]: https://www.youtube.com/watch?v=hQb0I3M2BuQ
