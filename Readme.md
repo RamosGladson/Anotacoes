@@ -1,1 +1,1 @@
-# Repositorio para minhas anotações de aprendizagem
+# Repositório para minhas anotações de aprendizagem
