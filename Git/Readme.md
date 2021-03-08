@@ -128,12 +128,12 @@ Copiar e colar no github
 
 ```
 git remote add origin https://github.com/usuario/exemplo.git
-git push origin master -U    // envia os arquivos, parametro -U marca origin como padrão
+git push origin master -u    // envia os arquivos, parametro -U marca origin como padrão
 ```
 ou com troca de chaves
 ```
 git remote add origin git@github.com/usuario/exemplo.git
-git push origin master -U    // envia os aruivos, parametro -U marca origin como padrão
+git push origin master -u    // envia os aruivos, parametro -U marca origin como padrão
 ```
 
 #### Clonar repositório
