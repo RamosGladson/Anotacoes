@@ -1,0 +1,7 @@
+fullname = input('Digite seu nome completo: ')
+print('Seu nome compléto é: {}'.format(fullname))
+print('Seu nome completo maiúsculo é: {}'.format(fullname.upper()))
+print('Seu nome completo minúsculo é: {}'.format(fullname.lower()))
+#print(''.join(fullname.split()))
+print('Quantidade de letras sem o espaço é {}'.format(len(''.join(fullname.split()))))
+print('Total de letras no primeiro nome é {}'.format(len(fullname.split()[0])))
