@@ -1,4 +1,4 @@
-n = int(input('digite um número '))
+n = int(input('\033[33mDigite um número '))
 d = n*2
 t = n*3
 r = n**(1/2)

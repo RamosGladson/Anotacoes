@@ -1,3 +1,7 @@
-nome = input('Qual o seu nome? ')
-print('Olá, prazer em te conhecer, {}!' .format(nome))
-
+print('\n')
+print('=+=' * 15)
+nome = input('{}Qual é o seu nome?{} '.format('\033[32m', '\033[m'))
+print('Olá, prazer em te conhecer, {}{}{}!' .format('\033[41m', nome.upper(), '\033[m'))
+print('\n' * 2)
+print('-' * 45)
+print('\n')
