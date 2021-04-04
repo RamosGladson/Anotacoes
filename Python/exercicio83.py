@@ -1,9 +1,9 @@
 invalida = 0
 posicaoabre = []
 posicaofecha = []
-expressao = input('Digite uma expressao: ')
+expressao = input('Digite uma expressão: ')
 if expressao.count("(") != expressao.count(")"):
-    print('Expressao inválida')
+    print('Expressão inválida')
 else:
     for c in range(0, len(expressao)):
         if expressao[c] == '(':
@@ -17,10 +17,3 @@ else:
             break
     if invalida == 0:
         print('Expressão válida')
-
-
-
-          
-
-print(posicaoabre)
-print(posicaofecha)
