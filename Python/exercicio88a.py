@@ -21,6 +21,6 @@ for c in range(0, quantidade):
     lista.clear()
 print('{:^40}'.format('Gerando números, aguarde...'))
 for jogo in jogos:
-    print(jogo)
+    print(jogo, end=' ')
     sleep(1)
 print('{:=^40}'.format('FIM'))
