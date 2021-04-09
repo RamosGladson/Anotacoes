@@ -16,7 +16,8 @@ def contador(inicio, fim, passo):
     else:
         fim += 1
     for c in range(inicio, fim, passo):
-        print(c, end=' ')
+        print(c, end=' ', flush=True)
+        sleep(0.5)
     print('Fim')
 
 #Programa principal

@@ -1,3 +1,4 @@
+from time import sleep
 def lin():
     print('-=' * 25)
 
@@ -9,7 +10,8 @@ def maior(* numeros):
     for c in numeros:
         if c > mais:
             mais = c
-        print(c, end=' ')
+        print(c, end=' ', flush=True)
+        sleep(0.8)
     print(f'Foram informados {len(numeros)} valores ao todo.')
     print(f'O maior valor informado foi {mais}')
 
