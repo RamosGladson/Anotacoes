@@ -1,0 +1,7 @@
+Gustavo;42
+Maria;23
+mariquinha;25
+mario;36
+joao;98
+joao pé de feijao;46
+maria;87
