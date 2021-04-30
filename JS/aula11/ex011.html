@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>País</title>
+</head>
+<body>
+    <h1>De onde você veio?</h1>
+    <input type="text" name="pais" id="pais">
+    <input type="button" value="checar" onclick="check()">
+    <div id='nacao'>
+        
+    </div>
+    <script>
+        function check(){
+            var pais = window.document.getElementById('pais')
+            var nacao = window.document.getElementById('nacao')
+            var pais = pais.value
+            nacao.innerHTML = `Você veio do ${pais}`
+            if (pais == "brasil"){
+                nacao.innerHTML += `<p>Você é <strong>brasileiro</strong></p>`
+            } else{
+                nacao.innerHTML += `<p>Você é extrangeiro</p>`
+            }
+            
+        }
+    </script>
+</body>
+</html>
