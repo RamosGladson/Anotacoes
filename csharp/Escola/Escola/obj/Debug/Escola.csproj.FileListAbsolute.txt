@@ -1,0 +1,8 @@
+C:\Users\gladsonramos\source\repos\Escola\Escola\obj\Debug\Escola.csproj.AssemblyReference.cache
+C:\Users\gladsonramos\source\repos\Escola\Escola\obj\Debug\Escola.csproj.SuggestedBindingRedirects.cache
+C:\Users\gladsonramos\source\repos\Escola\Escola\obj\Debug\Escola.csproj.CoreCompileInputs.cache
+C:\Users\gladsonramos\source\repos\Escola\Escola\bin\Debug\Escola.exe.config
+C:\Users\gladsonramos\source\repos\Escola\Escola\bin\Debug\Escola.exe
+C:\Users\gladsonramos\source\repos\Escola\Escola\bin\Debug\Escola.pdb
+C:\Users\gladsonramos\source\repos\Escola\Escola\obj\Debug\Escola.exe
+C:\Users\gladsonramos\source\repos\Escola\Escola\obj\Debug\Escola.pdb

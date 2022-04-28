@@ -1,0 +1,8 @@
+C:\Users\gladsonramos\source\repos\dateTime\dateTime\bin\Debug\dateTime.exe.config
+C:\Users\gladsonramos\source\repos\dateTime\dateTime\bin\Debug\dateTime.exe
+C:\Users\gladsonramos\source\repos\dateTime\dateTime\bin\Debug\dateTime.pdb
+C:\Users\gladsonramos\source\repos\dateTime\dateTime\obj\Debug\dateTime.csproj.AssemblyReference.cache
+C:\Users\gladsonramos\source\repos\dateTime\dateTime\obj\Debug\dateTime.csproj.SuggestedBindingRedirects.cache
+C:\Users\gladsonramos\source\repos\dateTime\dateTime\obj\Debug\dateTime.csproj.CoreCompileInputs.cache
+C:\Users\gladsonramos\source\repos\dateTime\dateTime\obj\Debug\dateTime.exe
+C:\Users\gladsonramos\source\repos\dateTime\dateTime\obj\Debug\dateTime.pdb

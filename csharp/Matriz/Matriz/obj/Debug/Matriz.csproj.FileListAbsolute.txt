@@ -1,0 +1,8 @@
+C:\Users\gladsonramos\source\repos\Matriz\Matriz\bin\Debug\Matriz.exe.config
+C:\Users\gladsonramos\source\repos\Matriz\Matriz\bin\Debug\Matriz.exe
+C:\Users\gladsonramos\source\repos\Matriz\Matriz\bin\Debug\Matriz.pdb
+C:\Users\gladsonramos\source\repos\Matriz\Matriz\obj\Debug\Matriz.csproj.AssemblyReference.cache
+C:\Users\gladsonramos\source\repos\Matriz\Matriz\obj\Debug\Matriz.csproj.SuggestedBindingRedirects.cache
+C:\Users\gladsonramos\source\repos\Matriz\Matriz\obj\Debug\Matriz.csproj.CoreCompileInputs.cache
+C:\Users\gladsonramos\source\repos\Matriz\Matriz\obj\Debug\Matriz.exe
+C:\Users\gladsonramos\source\repos\Matriz\Matriz\obj\Debug\Matriz.pdb

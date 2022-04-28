@@ -1,0 +1,8 @@
+C:\Users\gladsonramos\source\repos\ClientesArquivos\ClientesArquivos\obj\Debug\ClientesArquivos.csproj.AssemblyReference.cache
+C:\Users\gladsonramos\source\repos\ClientesArquivos\ClientesArquivos\obj\Debug\ClientesArquivos.csproj.SuggestedBindingRedirects.cache
+C:\Users\gladsonramos\source\repos\ClientesArquivos\ClientesArquivos\obj\Debug\ClientesArquivos.csproj.CoreCompileInputs.cache
+C:\Users\gladsonramos\source\repos\ClientesArquivos\ClientesArquivos\bin\Debug\ClientesArquivos.exe.config
+C:\Users\gladsonramos\source\repos\ClientesArquivos\ClientesArquivos\bin\Debug\ClientesArquivos.exe
+C:\Users\gladsonramos\source\repos\ClientesArquivos\ClientesArquivos\bin\Debug\ClientesArquivos.pdb
+C:\Users\gladsonramos\source\repos\ClientesArquivos\ClientesArquivos\obj\Debug\ClientesArquivos.exe
+C:\Users\gladsonramos\source\repos\ClientesArquivos\ClientesArquivos\obj\Debug\ClientesArquivos.pdb

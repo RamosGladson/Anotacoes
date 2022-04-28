@@ -1,0 +1,8 @@
+C:\Users\gladsonramos\source\repos\cor\cor\bin\Debug\cor.exe.config
+C:\Users\gladsonramos\source\repos\cor\cor\bin\Debug\cor.exe
+C:\Users\gladsonramos\source\repos\cor\cor\bin\Debug\cor.pdb
+C:\Users\gladsonramos\source\repos\cor\cor\obj\Debug\cor.csproj.AssemblyReference.cache
+C:\Users\gladsonramos\source\repos\cor\cor\obj\Debug\cor.csproj.SuggestedBindingRedirects.cache
+C:\Users\gladsonramos\source\repos\cor\cor\obj\Debug\cor.csproj.CoreCompileInputs.cache
+C:\Users\gladsonramos\source\repos\cor\cor\obj\Debug\cor.exe
+C:\Users\gladsonramos\source\repos\cor\cor\obj\Debug\cor.pdb

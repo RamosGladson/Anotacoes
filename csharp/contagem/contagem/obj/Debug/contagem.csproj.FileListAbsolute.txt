@@ -1,0 +1,8 @@
+C:\Users\gladsonramos\source\repos\contagem\contagem\bin\Debug\contagem.exe.config
+C:\Users\gladsonramos\source\repos\contagem\contagem\bin\Debug\contagem.exe
+C:\Users\gladsonramos\source\repos\contagem\contagem\bin\Debug\contagem.pdb
+C:\Users\gladsonramos\source\repos\contagem\contagem\obj\Debug\contagem.csproj.AssemblyReference.cache
+C:\Users\gladsonramos\source\repos\contagem\contagem\obj\Debug\contagem.csproj.SuggestedBindingRedirects.cache
+C:\Users\gladsonramos\source\repos\contagem\contagem\obj\Debug\contagem.csproj.CoreCompileInputs.cache
+C:\Users\gladsonramos\source\repos\contagem\contagem\obj\Debug\contagem.exe
+C:\Users\gladsonramos\source\repos\contagem\contagem\obj\Debug\contagem.pdb

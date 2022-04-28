@@ -1,0 +1,8 @@
+C:\Users\gladsonramos\source\repos\urgencia\urgencia\obj\Debug\urgencia.csproj.AssemblyReference.cache
+C:\Users\gladsonramos\source\repos\urgencia\urgencia\obj\Debug\urgencia.csproj.SuggestedBindingRedirects.cache
+C:\Users\gladsonramos\source\repos\urgencia\urgencia\obj\Debug\urgencia.csproj.CoreCompileInputs.cache
+C:\Users\gladsonramos\source\repos\urgencia\urgencia\bin\Debug\urgencia.exe.config
+C:\Users\gladsonramos\source\repos\urgencia\urgencia\bin\Debug\urgencia.exe
+C:\Users\gladsonramos\source\repos\urgencia\urgencia\bin\Debug\urgencia.pdb
+C:\Users\gladsonramos\source\repos\urgencia\urgencia\obj\Debug\urgencia.exe
+C:\Users\gladsonramos\source\repos\urgencia\urgencia\obj\Debug\urgencia.pdb

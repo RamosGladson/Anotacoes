@@ -1,0 +1,8 @@
+C:\Users\gladsonramos\source\repos\learquivo\learquivo\obj\Debug\learquivo.csproj.AssemblyReference.cache
+C:\Users\gladsonramos\source\repos\learquivo\learquivo\obj\Debug\learquivo.csproj.SuggestedBindingRedirects.cache
+C:\Users\gladsonramos\source\repos\learquivo\learquivo\obj\Debug\learquivo.csproj.CoreCompileInputs.cache
+C:\Users\gladsonramos\source\repos\learquivo\learquivo\bin\Debug\learquivo.exe.config
+C:\Users\gladsonramos\source\repos\learquivo\learquivo\bin\Debug\learquivo.exe
+C:\Users\gladsonramos\source\repos\learquivo\learquivo\bin\Debug\learquivo.pdb
+C:\Users\gladsonramos\source\repos\learquivo\learquivo\obj\Debug\learquivo.exe
+C:\Users\gladsonramos\source\repos\learquivo\learquivo\obj\Debug\learquivo.pdb

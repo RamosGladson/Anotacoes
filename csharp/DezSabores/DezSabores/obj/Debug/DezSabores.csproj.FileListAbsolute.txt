@@ -1,0 +1,8 @@
+C:\Users\gladsonramos\source\repos\DezSabores\DezSabores\obj\Debug\DezSabores.csproj.AssemblyReference.cache
+C:\Users\gladsonramos\source\repos\DezSabores\DezSabores\obj\Debug\DezSabores.csproj.SuggestedBindingRedirects.cache
+C:\Users\gladsonramos\source\repos\DezSabores\DezSabores\obj\Debug\DezSabores.csproj.CoreCompileInputs.cache
+C:\Users\gladsonramos\source\repos\DezSabores\DezSabores\bin\Debug\DezSabores.exe.config
+C:\Users\gladsonramos\source\repos\DezSabores\DezSabores\bin\Debug\DezSabores.exe
+C:\Users\gladsonramos\source\repos\DezSabores\DezSabores\bin\Debug\DezSabores.pdb
+C:\Users\gladsonramos\source\repos\DezSabores\DezSabores\obj\Debug\DezSabores.exe
+C:\Users\gladsonramos\source\repos\DezSabores\DezSabores\obj\Debug\DezSabores.pdb

@@ -1,0 +1,8 @@
+C:\Users\gladsonramos\source\repos\arquivobinario\arquivobinario\obj\Debug\arquivobinario.csproj.AssemblyReference.cache
+C:\Users\gladsonramos\source\repos\arquivobinario\arquivobinario\obj\Debug\arquivobinario.csproj.SuggestedBindingRedirects.cache
+C:\Users\gladsonramos\source\repos\arquivobinario\arquivobinario\obj\Debug\arquivobinario.csproj.CoreCompileInputs.cache
+C:\Users\gladsonramos\source\repos\arquivobinario\arquivobinario\bin\Debug\arquivobinario.exe.config
+C:\Users\gladsonramos\source\repos\arquivobinario\arquivobinario\bin\Debug\arquivobinario.exe
+C:\Users\gladsonramos\source\repos\arquivobinario\arquivobinario\bin\Debug\arquivobinario.pdb
+C:\Users\gladsonramos\source\repos\arquivobinario\arquivobinario\obj\Debug\arquivobinario.exe
+C:\Users\gladsonramos\source\repos\arquivobinario\arquivobinario\obj\Debug\arquivobinario.pdb
