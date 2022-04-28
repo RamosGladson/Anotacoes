@@ -39,11 +39,12 @@ git push --delete origin <nomeBranch>   // deleta a branch remoto
 
 ## Ciclo de vida dos arquivos
 
-Os arquivos em um repositório git possuem quatro estágios:
+Os arquivos em um repositório git possuem cinco estágios:
 * untracked
 * staged
 * commited
 * modified
+* deleted
 
 Um arquivo recem criado nasce no estágio *untracked*, uma vez que esse arquivo é adicionado para o commit ele passa para o estágio de *staged* e apos o commit passa para o estágio de *commited* e caso seja modificado será classificado como *modified*
 
