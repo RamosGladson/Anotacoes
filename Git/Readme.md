@@ -27,6 +27,8 @@ git reset head Readme.md // cancela o add.
 git reset --soft hash    // retorna o arquivo ao ponto do commit e deleta as hashs anteriores, ficando o arquivo pronto para o commit.
 git reset --mixed hash   // retorna o arquivo antes do add.
 git reset --hard hash    // retorna o aquivo para a hash e apaga tudo o que foi feito depois.
+git clean -df            // apaga os arquivos untracked
+git checkout -- .        // retorna ao ponto do ultimo commit
 git revert hash          // parece o reset, porém não apaga o commit com problema e cria um novo commit
 git remote               // mostra dados do repo remoto(-v +detail)
 git branch               // mostra branch

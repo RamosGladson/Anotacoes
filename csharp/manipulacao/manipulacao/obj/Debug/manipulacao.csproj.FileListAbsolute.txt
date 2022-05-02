@@ -6,3 +6,11 @@ C:\Users\gladsonramos\source\repos\manipulacao\manipulacao\obj\Debug\manipulacao
 C:\Users\gladsonramos\source\repos\manipulacao\manipulacao\obj\Debug\manipulacao.csproj.CoreCompileInputs.cache
 C:\Users\gladsonramos\source\repos\manipulacao\manipulacao\obj\Debug\manipulacao.exe
 C:\Users\gladsonramos\source\repos\manipulacao\manipulacao\obj\Debug\manipulacao.pdb
+C:\Users\gladsonramos\source\Anotacoes\csharp\manipulacao\manipulacao\bin\Debug\manipulacao.exe.config
+C:\Users\gladsonramos\source\Anotacoes\csharp\manipulacao\manipulacao\bin\Debug\manipulacao.exe
+C:\Users\gladsonramos\source\Anotacoes\csharp\manipulacao\manipulacao\bin\Debug\manipulacao.pdb
+C:\Users\gladsonramos\source\Anotacoes\csharp\manipulacao\manipulacao\obj\Debug\manipulacao.csproj.AssemblyReference.cache
+C:\Users\gladsonramos\source\Anotacoes\csharp\manipulacao\manipulacao\obj\Debug\manipulacao.csproj.SuggestedBindingRedirects.cache
+C:\Users\gladsonramos\source\Anotacoes\csharp\manipulacao\manipulacao\obj\Debug\manipulacao.csproj.CoreCompileInputs.cache
+C:\Users\gladsonramos\source\Anotacoes\csharp\manipulacao\manipulacao\obj\Debug\manipulacao.exe
+C:\Users\gladsonramos\source\Anotacoes\csharp\manipulacao\manipulacao\obj\Debug\manipulacao.pdb

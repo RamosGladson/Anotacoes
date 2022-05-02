@@ -11,12 +11,34 @@ namespace manipulacao
     {
         static void Main(string[] args)
         {
-            StreamWriter arquivo = File.AppendText("teste.txt");
-            arquivo.WriteLine("olá mundo");
-            arquivo.Close();
-            Console.WriteLine("Já foi escrito");
-            Console.ReadLine();
+            //Console.WriteLine("Digite o nome do arquivo a ser lido");
+//            string nome = Console.ReadLine();
 
+            StreamReader leitor = new StreamReader("teste.txt");
+            List<string> list = new List<string>();
+            string linha = "";
+
+            while (linha!=null)
+            {
+                linha = leitor.ReadLine();
+                if (linha != null)
+                {                    
+                    list.Add(linha);
+                }
+                
+            }
+            leitor.Close();
+
+            foreach (string line in list)
+            {
+                Console.WriteLine(line);
+            }
+
+            Console.WriteLine("fim");            
+            Console.ReadLine();
+            
+
+            
         }
     }
 }
