@@ -1,0 +1,8 @@
+C:\Users\gladsonramos\source\repos\binariosDois\binariosDois\bin\Debug\binariosDois.exe.config
+C:\Users\gladsonramos\source\repos\binariosDois\binariosDois\bin\Debug\binariosDois.exe
+C:\Users\gladsonramos\source\repos\binariosDois\binariosDois\bin\Debug\binariosDois.pdb
+C:\Users\gladsonramos\source\repos\binariosDois\binariosDois\obj\Debug\binariosDois.csproj.AssemblyReference.cache
+C:\Users\gladsonramos\source\repos\binariosDois\binariosDois\obj\Debug\binariosDois.csproj.SuggestedBindingRedirects.cache
+C:\Users\gladsonramos\source\repos\binariosDois\binariosDois\obj\Debug\binariosDois.csproj.CoreCompileInputs.cache
+C:\Users\gladsonramos\source\repos\binariosDois\binariosDois\obj\Debug\binariosDois.exe
+C:\Users\gladsonramos\source\repos\binariosDois\binariosDois\obj\Debug\binariosDois.pdb

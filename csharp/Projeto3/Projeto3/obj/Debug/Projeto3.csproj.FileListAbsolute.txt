@@ -1,0 +1,8 @@
+C:\Users\gladsonramos\source\Anotacoes\csharp\Projeto3\Projeto3\obj\Debug\Projeto3.csproj.AssemblyReference.cache
+C:\Users\gladsonramos\source\Anotacoes\csharp\Projeto3\Projeto3\obj\Debug\Projeto3.csproj.SuggestedBindingRedirects.cache
+C:\Users\gladsonramos\source\Anotacoes\csharp\Projeto3\Projeto3\obj\Debug\Projeto3.csproj.CoreCompileInputs.cache
+C:\Users\gladsonramos\source\Anotacoes\csharp\Projeto3\Projeto3\bin\Debug\Projeto3.exe.config
+C:\Users\gladsonramos\source\Anotacoes\csharp\Projeto3\Projeto3\bin\Debug\Projeto3.exe
+C:\Users\gladsonramos\source\Anotacoes\csharp\Projeto3\Projeto3\bin\Debug\Projeto3.pdb
+C:\Users\gladsonramos\source\Anotacoes\csharp\Projeto3\Projeto3\obj\Debug\Projeto3.exe
+C:\Users\gladsonramos\source\Anotacoes\csharp\Projeto3\Projeto3\obj\Debug\Projeto3.pdb
