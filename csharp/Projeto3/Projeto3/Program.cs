@@ -10,10 +10,6 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Projeto3
 {
-
-
-
-
     internal class Program
     {
 
@@ -74,12 +70,12 @@ namespace Projeto3
         }
         static void Sair()
         {
-            Console.WriteLine("Sair");
+            Console.WriteLine("Saindo");
             Espera();
         }
 
         #region Funções Cadastro de Produtos
-        
+
         static void Listar()
         {
             Titulo("Lista de Produtos");
@@ -88,8 +84,8 @@ namespace Projeto3
                 Console.WriteLine(item);
                 Linha();
             }
-            
-            
+
+
         }
 
         static void IncluirProduto()
@@ -97,8 +93,7 @@ namespace Projeto3
             bool maisProdutos = true;
             while (maisProdutos)
             {
-                Console.WriteLine("Incluindo Produto");
-                Espera();
+                Titulo("Incluir produtos");
                 Console.Write("Digite o nome do produto: ");
                 string nome = Console.ReadLine();
                 Console.Write("Digite o preço do produto: ");
@@ -110,6 +105,7 @@ namespace Projeto3
                 Produto produto = new Produto(nome, preco, peso, volume);
                 produtos.Add(produto);
                 Salvar();
+                Linha();
                 Console.WriteLine("Deseja incluir mais produtos?[sim/nao]");
                 string simNao = Console.ReadLine();
                 if (simNao == "sim")
@@ -117,27 +113,35 @@ namespace Projeto3
                 }
                 else
                 {
-                    maisProdutos=false;
+                    maisProdutos = false;
                 }
                 Espera();
             }
             Salvar();
             Console.WriteLine("Produtos incluidos com sucesso");
-            
+
         }
 
         static void AlterarProduto()
         {
-            Console.WriteLine("Alterar Produto");
-
-            Espera();
+            Console.WriteLine("Digite o nome do produto a ser alterado");
+            string nome = Console.ReadLine();
+            if (produtos.All(x => x.Nome == nome))
+            {
+                Produto x = new Produto;
+                x
+            }
+            Salvar();
+            Console.WriteLine();
         }
 
         static void ExcluirProduto()
         {
-            Titulo("Excluir Produto");            
-            
-            Espera();
+
+            Console.WriteLine("Digite o nome do produto a ser excluido");
+            string nome = Console.ReadLine();
+            produtos.RemoveAll(x => x.Nome == nome);
+            Salvar();
         }
 
         #endregion
@@ -148,16 +152,14 @@ namespace Projeto3
         static void Comprar()
         {
             Console.WriteLine("Comprar");
-            Espera();
         }
 
         static void Vender()
         {
             Console.WriteLine("Vender");
-            Espera();
         }
 
-        
+
 
         #endregion
         #endregion
@@ -181,11 +183,11 @@ namespace Projeto3
         }
         static void Linha()
         {
-            Console.WriteLine("===============================");
+            Console.WriteLine("=======================================");
 
         }
         #endregion
-        
+
         #region variaveis globais
         static List<Produto> produtos = new List<Produto>();
         enum Menu { Listar = 1, Incluir, Alterar, Excluir, Comprar, Vender, Sair }
@@ -195,8 +197,9 @@ namespace Projeto3
         {
             CarregaArquivo();
             bool escolheuFicar = true;
+            string simNao;
             while (escolheuFicar)
-            {   
+            {
                 MostraMenu();
                 Linha();
                 int opcao = RecebeOpção();
@@ -205,27 +208,48 @@ namespace Projeto3
 
                     case Menu.Listar:
                         Listar();
-                        Console.WriteLine("Pressione enter tecla para sair");
+                        Console.WriteLine("Pressione enter para sair");
                         Console.ReadLine();
-                        Espera();
                         break;
-                    
+
                     case Menu.Incluir:
                         IncluirProduto();
                         break;
-                    
-                    case Menu.Alterar:
-                        AlterarProduto();
-                        break;
 
-                    case Menu.Excluir:
-                        Console.WriteLine("Deseja listar os produtos?");
-                        string simNao=Console.ReadLine();
+                    case Menu.Alterar:
+                        Console.WriteLine("Deseja listar os produtos?[sim/nao]");
+                        simNao = Console.ReadLine();
+                        Espera();
                         if (simNao == "sim")
                         {
                             Listar();
+                            AlterarProduto();
                         }
-                        ExcluirProduto();
+                        else
+                        {
+                            Titulo("Alterar produto");
+                            AlterarProduto();
+                        }
+
+                        break;
+
+                        break;
+
+                    case Menu.Excluir:
+                        Console.WriteLine("Deseja listar os produtos?[sim/nao]");
+                        simNao = Console.ReadLine();
+                        Espera();
+                        if (simNao == "sim")
+                        {
+                            Listar();
+                            ExcluirProduto();
+                        }
+                        else
+                        {
+                            Titulo("Excluir produtos");
+                            ExcluirProduto();
+                        }
+
                         break;
 
                     case Menu.Comprar:
@@ -237,7 +261,7 @@ namespace Projeto3
                         break;
 
                     case Menu.Sair:
-                        escolheuFicar=false;
+                        escolheuFicar = false;
                         Sair();
                         break;
 
@@ -246,7 +270,7 @@ namespace Projeto3
                         break;
 
                 }
-
+                Espera();
             }
         }
 

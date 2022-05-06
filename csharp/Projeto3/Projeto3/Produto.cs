@@ -10,22 +10,26 @@ namespace Projeto3
     [System.Serializable]
     internal class Produto
     {
-        protected string _nome;
-        protected float _preco;
-        protected float _peso;
-        protected float _volume;
+        public string Nome { get; set; }
+        public float Preco { get; protected set; }
+        public float Peso { get; protected set; }
+        public float Volume { get; protected set; }
 
         public Produto(string nome, float preco, float peso, float volume)
         {
-            _nome = nome;
-            _preco = preco;
-            _peso = peso;
-            _volume = volume;
+            Nome = nome;
+            Preco = preco;
+            Peso = peso;
+            Volume = volume;
 
+        }
+        public void SetNome()
+        {
+            Nome = Console.ReadLine();
         }
         public override string ToString()
         {
-            return $"Nome: {_nome}\nPreço: R$ {_preco}\nPeso: {_peso} KG\nVolume: {_volume} metros cubicos";
+            return $"Nome: {Nome}\nPreço: R$ {Preco}\nPeso: {Peso} KG\nVolume: {Volume} metros cubicos";
         }
     }
 }
