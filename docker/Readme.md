@@ -1,7 +1,8 @@
 # Docker
 >Comandos docker
 ```
-docker run [options] image:tag [command] [args]
+docker run [options] image:tag [command] [args]     // modo attach por default
+
 
 [options]
 -p 8080:80                           // mapeia porta 8080 do host apontando para porta exposta 80 do container
@@ -12,6 +13,20 @@ docker run [options] image:tag [command] [args]
 -v [pasta/host:/pasta/container]     // mapeia pasta do host ao container para persistencia de dados
 --env VAR1=value1 --env VAR2=value2  // informa as variaveis de ambiente
 --dns 8.8.8.8 --dns 8.8.4.4          // fornece um servidor dns ao container                       
+
+docker attach [nome container]       // estabelece modo attach ao container
+docker logs -f [nome container]      // ecoa como attach, porem não mata o container ao sair
+
+docker start [nome container]        // modo detach por default
+docker start -a [nome container]     // inicia com modo attach
+
+
+docker cp [origem] [destino]
+
+eg.
+docker cp pasta/. container_name:/pasta     // copia do host para container
+docker cp container_name:/pasta/. pasta/    // copia do container para host
+
 ```
 
 ## Docker Build
@@ -31,7 +46,7 @@ docker build [options]
 [options]
 --file, -f                                // especifica a diretorio e arquivo Dockerfile
 --label                                   // meta data para imagem, utilizado para filtrar a imagem
---tag, -t                                 // coloca um nome para imagem
+--tag, -t                                 // coloca um nome para imagem ou nome:tag  nginx:meusite
 
 ```
 
