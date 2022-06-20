@@ -16,9 +16,11 @@ docker run [options] image:tag [command] [args]
 
 ## Docker Build
 >Customiza uma imagem a partir de outra.
+[comandos][comandos-url]
 ```
-Comandos:                                 // https://docs.docker.com/engine/reference/commandline/docker/
+Comandos:                                 // 
 docker images                             // mostra as imagens
+docker rmi                                // remove imagem
 docker image prune                        // remove imagens nao utilizadas
 docker image pull                         // puxa uma imagen do repositorio
 docker image push                         // envia uma imagem para o repositorio
@@ -34,7 +36,8 @@ docker build [options]
 ```
 
 
->Arquivo Dockerfile:                      // https://www.alura.com.br/artigos/desvendando-o-dockerfile?gclid=Cj0KCQjwwJuVBhCAARIsAOPwGATIUMSQUUMZtDNGMWCFJ6BCSXp_RFKGScAsoE9jYlQgPEsHd_PMLi4aAiWoEALw_wcB
+>Arquivo Dockerfile:                         [dockerfile][dockerfile-url]
+
 
 ```
 # comentario
@@ -78,8 +81,10 @@ VOLUME /myvol
 >Seta um ambiente para trabalhar com mais de um container
 
 ### Arquivo docker-compose.yml para wordpress
+[compatibilidade][compatibilidade-url]
+
 ```
-version: '3.8'                            // matriz de compatibilidade https://docs.docker.com/compose/compose-file/compose-versioning/
+version: '3.8'                            // matriz de compatibilidade
 
 services:
   db:                                     // nomeia o serviço
@@ -110,9 +115,10 @@ services:
 ```
 
 ### Arquivo docker-compose.yml para wordpress com .env
+[compatibilidade][compatibilidade-url]
 
 ```
-version: '3.8'                            // matriz de compatibilidade https://docs.docker.com/compose/compose-file/compose-versioning/
+version: '3.8'                            // matriz de compatibilidade
 
 services:
   db:                                     // nomeia o serviço
@@ -156,3 +162,9 @@ DB_PASSWORD=wordpress
 DB_NAME=wordpress
 ```
 >docker compose up -d
+
+
+<!-- links -->
+[dockerfile-url]: https://www.alura.com.br/artigos/desvendando-o-dockerfile?gclid=Cj0KCQjwwJuVBhCAARIsAOPwGATIUMSQUUMZtDNGMWCFJ6BCSXp_RFKGScAsoE9jYlQgPEsHd_PMLi4aAiWoEALw_wcB
+[comandos-url]: https://docs.docker.com/engine/reference/commandline/docker/
+[compatibilidade-url]: https://docs.docker.com/compose/compose-file/compose-versioning/
