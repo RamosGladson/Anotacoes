@@ -5,27 +5,31 @@ docker run [options] image:tag [command] [args]     // modo attach por default
 
 
 [options]
--p 8080:80                           // mapeia porta 8080 do host apontando para porta exposta 80 do container
---expose 80                          // apena expoe a porta 80 do container
--d                                   // roda container em modo detach, não bloqueia o terminal
--i                                   // modo interativo
--it                                  // abre um terminal
--v [pasta/host:/pasta/container]     // mapeia pasta do host ao container para persistencia de dados
---env VAR1=value1 --env VAR2=value2  // informa as variaveis de ambiente
---dns 8.8.8.8 --dns 8.8.4.4          // fornece um servidor dns ao container                       
+-p 8080:80                                // mapeia porta 8080 do host apontando para porta exposta 80 do container
+--expose 80                               // apena expoe a porta 80 do container
+-d                                        // roda container em modo detach, não bloqueia o terminal
+-i                                        // modo interativo
+-it                                       // abre um terminal
+-v /app/resources                         // volume anonimo
+-v nome:/app/temp                         // named volume
+-v pasta/host:/container                  // bind volume, mapeia pasta do host ao container para persistencia de dados
+-v pasta/host:/container:ro               // bind volume, mapeia pasta do host ao container para persistencia de dados [read only]
+-v "%cd%":/app                            // monta pasta atual do hosto na pasta /app do container
+--env VAR1=value1 --env VAR2=value2       // informa as variaveis de ambiente
+--dns 8.8.8.8 --dns 8.8.4.4               // fornece um servidor dns ao container                       
 
-docker attach [nome container]       // estabelece modo attach ao container
-docker logs -f [nome container]      // ecoa como attach, porem não mata o container ao sair
+docker attach [nome container]            // estabelece modo attach ao container
+docker logs -f [nome container]           // ecoa como attach, porem não mata o container ao sair
 
-docker start [nome container]        // modo detach por default
-docker start -a [nome container]     // inicia com modo attach
+docker start [nome container]             // modo detach por default
+docker start -a [nome container]          // inicia com modo attach
 
 
 docker cp [origem] [destino]
 
 eg.
-docker cp pasta/. container_name:/pasta     // copia do host para container
-docker cp container_name:/pasta/. pasta/    // copia do container para host
+docker cp pasta/. container_name:/pasta   // copia do host para container
+docker cp container_name:/pasta/. pasta/  // copia do container para host
 
 ```
 
@@ -40,6 +44,11 @@ docker image prune                        // remove imagens nao utilizadas
 docker image pull                         // puxa uma imagen do repositorio
 docker image push                         // envia uma imagem para o repositorio
 docker image rm [id]                      // remove imagens pelo id
+docker tab [nome_imagem_origem:tag] [nome_imagem_destino:tag]   // clona imagem
+
+docker push [repositorio/nome:tag]        // envia imagem para docker hub
+
+docker login                              // loga no docker hub
 
 docker build [options]
 
@@ -51,9 +60,8 @@ docker build [options]
 ```
 
 
->Arquivo Dockerfile:                         [dockerfile][dockerfile-url]
-
-
+## Arquivo Dockerfile:                         [dockerfile][dockerfile-url]
+>Arquivo para construcao de imagem docker
 ```
 # comentario
 # minha imagem docker
@@ -87,40 +95,50 @@ RUN echo $QUAL_QUER_COISA > /etc/hostname   // insere conteudo de QUAL_QUER_COIS
 
 ENV POSTGRES_PASSWORD=mysecretpassword      // passagem de variaveis env
 
+                                            // somente volumes anonimos podem ser criados com Dockerfile
+VOLUME /myvol                               // mapeia volume anonimo
+VOLUME [ "/app/node_module" ]               // volume anonimo
 
-VOLUME /myvol
+```
+### Arquivo .dockerignore
+>Informa quais arquivos não deveriam ser copiados para a imagem docker
+
+```
+Dockerfile                                  //não copia o arquivo Dockerfile
+.git
+
 ```
 
 
 ## Docker Compose
 >Seta um ambiente para trabalhar com mais de um container
 
-### Arquivo docker-compose.yml para wordpress
-[compatibilidade][compatibilidade-url]
+### Arquivo docker-compose.yml para wordpress  
+>[compatibilidade][compatibilidade-url]
 
 ```
-version: '3.8'                            // matriz de compatibilidade
+version: '3.8'                              // matriz de compatibilidade
 
 services:
-  db:                                     // nomeia o serviço
-    image: mariadb                        // seleciona uma imagem, caso não tenha uma imagem local, baixa do docker hub
-    volumes:                              // utilizacao de volumes eh opcional, serve para persistencia de dados
-      - /c/tmp/banco:/var/lib/mysql       // cria um volume no host e aponta para pasta /var/lib/mysql do container
-    restart: always                       // reinicia o container sempre que travar
+  db:                                       // nomeia o serviço
+    image: mariadb                          // seleciona uma imagem, caso não tenha uma imagem local, baixa do docker hub
+    volumes:                                // utilizacao de volumes eh opcional, serve para persistencia de dados
+      - /c/tmp/banco:/var/lib/mysql         // cria um volume no host e aponta para pasta /var/lib/mysql do container
+    restart: always                         // reinicia o container sempre que travar
     environment:
-      MYSQL_ROOT_PASSWORD: p@ssw0rd       // seta variavel env
+      MYSQL_ROOT_PASSWORD: p@ssw0rd         // seta variavel env
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
     
   wordpress:
-    depends_on:                           // só inicia após container db estar ok
+    depends_on:                             // só inicia após container db estar ok
       - db
     image: wordpress
     volumes:
       - /c/tmp/wordpress:/var/www/html
     ports:
-      - "8080:80"                          // mapeia a porta 8080 do host apontando para porta 80 do container
+      - "8080:80"                           // mapeia a porta 8080 do host apontando para porta 80 do container
     restart: always
     environment:
       WORDPRESS_DB_HOST: db
@@ -133,28 +151,28 @@ services:
 [compatibilidade][compatibilidade-url]
 
 ```
-version: '3.8'                            // matriz de compatibilidade
+version: '3.8'                              // matriz de compatibilidade
 
 services:
-  db:                                     // nomeia o serviço
-    image: mariadb                        // seleciona uma imagem, caso não tenha uma imagem local, baixa do docker hub
+  db:                                       // nomeia o serviço
+    image: mariadb                          // seleciona uma imagem, caso não tenha uma imagem local, baixa do docker hub
     volumes:
-      - /c/tmp/banco:/var/lib/mysql       // cria um volume no host e aponta para pasta /var/lib/mysql do container
-    restart: always                       // reinicia o container sempre que travar
+      - /c/tmp/banco:/var/lib/mysql         // cria um volume no host e aponta para pasta /var/lib/mysql do container
+    restart: always                         // reinicia o container sempre que travar
     environment:
-      MYSQL_ROOT_PASSWORD: ${SQL_PASSWD}       // seta variavel env
+      MYSQL_ROOT_PASSWORD: ${SQL_PASSWD}    // seta variavel env
       MYSQL_DATABASE: ${SQL_DATABASE}
       MYSQL_USER: ${SQL_USER}
       MYSQL_PASSWORD: ${SQL_PASSWORD}
     
   wordpress:
-    depends_on:                           // só inicia após container db estar ok
+    depends_on:                             // só inicia após container db estar ok
       - db
     image: wordpress
     volumes:
       - /c/tmp/wp:/var/www/html
     ports:
-      - "8080:80"                          // mapeia a porta 8080 do host apontando para porta 80 do container
+      - "8080:80"                           // mapeia a porta 8080 do host apontando para porta 80 do container
     restart: always
     environment:
       WORDPRESS_DB_HOST: ${DB_HOST}
