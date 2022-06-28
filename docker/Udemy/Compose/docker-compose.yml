@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: 'mongo'
+    volumes:
+      - data2:/data/db   
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: max
+      MONGO_INITDB_ROOT_PASSWORD: secret
+      # - MONGO_USER=max
+    # env_file:
+    #   - ./env/mongo.env
+    networks:
+      - mvc
+    
+
+  backend:
+    build: ./backend
+    # image: node    
+      # context: ./backend
+      # dockerfile: Dockerfile
+      # args:
+      #   HOST_NAME: qualquercoisa
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: max
+      MONGO_INITDB_ROOT_PASSWORD: secret
+    ports:
+      - '8001:80'
+    networks:
+      - mvc
+
+  frontend:
+    build: ./frontend    
+    ports:
+      - '3000:3000'
+    networks:
+      - mvc
+    
+
+
+volumes:
+  data2:
+
+networks:
+  mvc:

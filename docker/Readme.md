@@ -164,6 +164,9 @@ services:
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
+
+  frontend
+    build: ./frontend                      // especifica caminho Dockerfile para construção de imagem docker
 ```
 
 ### Arquivo docker-compose.yml para wordpress com .env
