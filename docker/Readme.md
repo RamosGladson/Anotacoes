@@ -5,6 +5,7 @@ docker run [options] image:tag [command] [args]     // modo attach por default
 
 
 [options]
+--network minha_rede                      // utiliza a rede minha_rede
 -p 8080:80                                // mapeia porta 8080 do host apontando para porta exposta 80 do container
 --expose 80                               // apena expoe a porta 80 do container
 -d                                        // roda container em modo detach, não bloqueia o terminal
@@ -59,6 +60,23 @@ docker build [options]
 
 ```
 
+## Docker network
+>
+
+host.docker.internal                      // aponta para o host do container
+
+docker network create nome_rede           // cria uma rede para comunicação entre os containers
+docker network create --driver overlay nome_rede  // rede do tipo overlay
+docker network create -d overlay nome_rede        // outra maneira de declarar a linha acima
+
+*tipos de driver para rede
+
+bridge                                    // cria uma rede nat
+host                                      // cria uma rede bridge
+overlay                                   // rede entre hosts, funciona com Swarm
+macvlan                                   // permite customizar MAC address em um container
+none                                      // desabilita as redes
+Third-party plugins                       // 
 
 ## Arquivo Dockerfile:                         [dockerfile][dockerfile-url]
 >Arquivo para construcao de imagem docker
