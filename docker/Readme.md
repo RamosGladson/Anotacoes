@@ -62,7 +62,7 @@ docker build [options]
 
 ## Docker network
 >
-
+```
 host.docker.internal                      // aponta para o host do container
 
 docker network create nome_rede           // cria uma rede para comunicação entre os containers
@@ -77,6 +77,7 @@ overlay                                   // rede entre hosts, funciona com Swar
 macvlan                                   // permite customizar MAC address em um container
 none                                      // desabilita as redes
 Third-party plugins                       // 
+```
 
 ## Arquivo Dockerfile:                         [dockerfile][dockerfile-url]
 >Arquivo para construcao de imagem docker
