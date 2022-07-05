@@ -3,26 +3,26 @@ version: '3.8'
 services:
   db:                                    
     image: mariadb                       
-    volumes:
-      - /c/tmp/banco:/var/lib/mysql       
+    # volumes:
+    #   - /c/tmp/banco:/var/lib/mysql       
     restart: always                    
     environment:
-      MYSQL_ROOT_PASSWORD: ${SQL_PASSWD} 
-      MYSQL_DATABASE: ${SQL_DATABASE}
-      MYSQL_USER: ${SQL_USER}
-      MYSQL_PASSWORD: ${SQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: 123456 
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
     
   wordpress:
     depends_on:                          
       - db
     image: wordpress
-    volumes:
-      - /c/tmp/wp:/var/www/html
+    # volumes:
+    #   - /c/tmp/wp:/var/www/html
     ports:
       - "8080:80"                        
     restart: always
     environment:
-      WORDPRESS_DB_HOST: ${DB_HOST}
-      WORDPRESS_DB_USER: ${DB_USER}
-      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
-      WORDPRESS_DB_NAME: ${DB_NAME}
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress

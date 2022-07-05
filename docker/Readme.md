@@ -1,6 +1,8 @@
 # Docker
 >Comandos docker
 ```
+docker exec -it [nome_container] [comando]
+
 docker run [options] image:tag [command] [args]     // modo attach por default
 
 
@@ -143,6 +145,7 @@ services:
     image: mariadb                          // seleciona uma imagem, caso não tenha uma imagem local, baixa do docker hub
     volumes:                                // utilizacao de volumes eh opcional, serve para persistencia de dados
       - /c/tmp/banco:/var/lib/mysql         // cria um volume no host e aponta para pasta /var/lib/mysql do container
+      - ./app:/var/www/html                 // usa caminho relativo
     restart: always                         // reinicia o container sempre que travar
     environment:
       MYSQL_ROOT_PASSWORD: p@ssw0rd         // seta variavel env
@@ -154,8 +157,10 @@ services:
     depends_on:                             // só inicia após container db estar ok
       - db
     image: wordpress
+    container_name: mongodb                 // nomeia container
     volumes:
       - /c/tmp/wordpress:/var/www/html
+      - volume1:/app                        // volume tipo named
     ports:
       - "8080:80"                           // mapeia a porta 8080 do host apontando para porta 80 do container
     restart: always
@@ -167,6 +172,14 @@ services:
 
   frontend
     build: ./frontend                      // especifica caminho Dockerfile para construção de imagem docker
+
+volumes:                                   // cria volumes
+  data:
+  logs:
+  backend:
+
+networks:                                  // cria redes | desnecessário
+  mvc:
 ```
 
 ### Arquivo docker-compose.yml para wordpress com .env

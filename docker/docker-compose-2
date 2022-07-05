@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  node:
+    build: ./
+    volumes:
+      - C:\Users\gladsonramos\source\Anotacoes\docker\:/app
+    stdin_open: true
+    tty:  true

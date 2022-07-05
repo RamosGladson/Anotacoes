@@ -1,3 +1,5 @@
-FROM postgres:14
+FROM node:14-alpine
 
-RUN listen_addresses='192.168.0.0/24'
+WORKDIR /app
+
+ENTRYPOINT [ "npm" ]
