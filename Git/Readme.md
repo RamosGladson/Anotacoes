@@ -2,8 +2,7 @@
 >É um versionador de arquivos.
 
 Git é um versionador de arquivos que pode ser usado por uma pessoa ou um time de desenvolvimento. Foi criado com a finalidade de facilitar o desenvolvimento de softwares, mas pode ser usado com várias finalidades, de versionador de arquivos de imagens para designers até como um caderno de anotações, com acesso local ou global (através do github, desde que tenha acesso a internet). Segue site para auxílio no aprendizado:
-
->[Learn Git Branching][learn-gitbranching]
+[Learn Git Branching][learn-gitbranching]
 
 
 Alguns exempos de comandos no git:
