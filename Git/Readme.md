@@ -1,7 +1,10 @@
 # Git
 >É um versionador de arquivos.
 
-Git é um versionador de arquivos que pode ser usado por uma pessoa ou um time de desenvolvimento. Foi criado com a finalidade de facilitar o desenvolvimento de softwares, mas pode ser usado com várias finalidades, de versionador de arquivos de imagens para designers até como um caderno de anotações, com acesso local ou global (através do github, desde que tenha acesso a internet).
+Git é um versionador de arquivos que pode ser usado por uma pessoa ou um time de desenvolvimento. Foi criado com a finalidade de facilitar o desenvolvimento de softwares, mas pode ser usado com várias finalidades, de versionador de arquivos de imagens para designers até como um caderno de anotações, com acesso local ou global (através do github, desde que tenha acesso a internet). Segue site para auxílio no aprendizado:
+
+>[Learn Git Branching][learn-gitbranching]
+
 
 Alguns exempos de comandos no git:
 ```
@@ -115,9 +118,6 @@ ssh-keygen -t rsa -b 4096
 Iniciar agente ssh
 ```
 eval $(ssh-agent)
-ssh-add ~/.ssh/arquivo_rsa
-ou
-eval 'ssh-agent -s)
 ssh-add ~/.ssh/arquivo_rsa
 ```
 Add chave no github
@@ -338,6 +338,7 @@ O arquivo readme orienta o usuário na utilização do repositório, em geral, i
 
 
 <!-- Markdown Links -->
+[learn-gitbranching]: https://learngitbranching.js.org
 [markdown-guide]: https://www.markdownguide.org/
 [shields-url]: https://shields.io/
 [repo-shields]: https://github.com/badges/shields
