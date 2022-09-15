@@ -256,11 +256,12 @@ do				//diffget pull/get changes
 
 ##Colors
 
+```  
 Purple				=> differing line
 Red    				=> differing characters in the differing line
 Blue 				=> new block
 cyan/teal			=> missing block
-
+```
 
 
 
