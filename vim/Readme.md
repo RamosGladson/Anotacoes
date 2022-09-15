@@ -156,6 +156,8 @@ z=				//corrections possibilities
 :g/HEAD/delete			//(grep | HEAD) delete
 :normal WhD			//exec W (skip word) h (<-) D (delete)
 :%normal WhD			//% entire document
+ctrl+i				//jumps
+ctrl+o				//jumps
 
 
 ------------------------ sort -------------------------------
@@ -172,8 +174,11 @@ q				//macro record start/stop
 @				//call macro
 :reg a				//show register
 :@ 				//exec last register
-ctrl+i				//jumps
-ctrl+o				//jumps
+
+*register all delete commands
+:reg 				//show register
+"3p				//paste third register
+
 
 --------------------- buffers ------------------------------
 :e filename.txt			//open filename.txt
