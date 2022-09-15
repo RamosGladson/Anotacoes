@@ -100,7 +100,7 @@ cc				//delete line for replacement
 C				//delete from cursor to end of line
 J				//join next line
 :s/old/new			//replace first word "
-15g				//go to line 15
+15G				//go to line 15
 50%				//go to midle of the file
 ^				//beginning of the line
 zz 				//centralize window
