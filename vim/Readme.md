@@ -103,10 +103,10 @@ J				//join next line
 15g				//go to line 15
 50%				//go to midle of the file
 ^				//beginning of the line
-zz 				//centralize screen
-zb				//screen down
-zt				//screen up
-M               	        //centralize cursor in the screen
+zz 				//centralize window
+zb				//window down
+zt				//window up
+M               	        //centralize cursor in the window
 H  		                //cursor up
 L              			//cursor down
 / 				//forward search
@@ -153,8 +153,78 @@ ctrl+x + ctrl+f			//path autocomplete
 *ctrl+x + ctrl+k		//open dictionary
 [S / ]S				//navegate between errors
 z=				//corrections possibilities
+:g/HEAD/delete			//(grep | HEAD) delete
+:normal WhD			//exec W (skip word) h (<-) D (delete)
+:%normal WhD			//% entire document
+
+
+------------------------ sort -------------------------------
+ggVG
+:'<, '>sort
+ggVG
+:'<, '>!unic -c
+ggVG
+:'<, '>!sort -n
+
+
+-------------------- registers -----------------------------
 q				//macro record start/stop
 @				//call macro
+:reg a				//show register
+:@ 				//exec last register
+ctrl+i				//jumps
+ctrl+o				//jumps
+
+--------------------- buffers ------------------------------
+:e filename.txt			//open filename.txt
+:ls				//show buffers
+:b2				//jump to buffer 2
+:bn				//next buffer
+:bp				//previus buffer
+:bufdo                 		//exec in all buffers
+:bufdo retab			//retab all buffers
+
+
+------------------ windows split --------------------------
+ctrl+w  v			//vertical split
+ctrl+w  s			//horizontal split
+:sp filename.txt		//open filename.txt in horizontal split window
+:vs filename.txt		//open filename.txt in vertical split window
+ctrl+w h/j/k/l			//navegation
+ctrl+w q			//split close
+
+
+------------------- windows tabs --------------------------
+:tab new					//new tab
+:tabs						//show tabs
+ctrl+w c / :tabc / :tabclose / :tabclose {1} 	//tab closing commands
+:tab split 					//doble tab
+gt						//next tab
+gT						//previous tab
+{2}gt						//goes to tab 2
+
+
+------------------------ fold ----------------------------
+:set foldmethod=indent		//
+za				//open/close fold
+zo				//open fold
+zc				//close fold
+zR				//open all
+zM				//close all
+
+
+----------------------- bash -----------------------------
+:r!hostname -I			//redirect hostname -I stdout inside the file
+:!ls				//exec ls in path
+
+
+------------------------ mark ----------------------------
+ma				//point a
+mb				//point b
+mc				//point c
+'a				//jump to point a
+'b				//jump to point b
+'c				//jump to point c
 
 
 
@@ -185,108 +255,6 @@ Purple				=> differing line
 Red    				=> differing characters in the differing line
 Blue 				=> new block
 cyan/teal			=> missing block
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
