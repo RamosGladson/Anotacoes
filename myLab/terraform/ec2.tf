@@ -6,7 +6,7 @@ resource "aws_instance" "server" {
     Name = var.name
     Environment = var.env
     Provisioner = "Terraform"
-    Source = var.source
+    Repo = var.repo
   }
 
 }
