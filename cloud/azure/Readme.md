@@ -1,7 +1,21 @@
 # Azure cloud
+>[Azure Documentation][azure-doc]
 
 
+## Resources Groups
 
+  - Resources can be created, migrated (between resources groups)
+  - Share same life-cicle
+  - Resources groups can have resources in more than one resource group
+  - Resources can interate with other resources in other resource group
+
+
+## Controlers
+
+  - Tags (categories)
+  - Locks (blocking)
+  - IAM (Access control)
+  - Polices 
 
 ## Understanding active directory
 > Similar to Microsoft Active Directory
@@ -33,3 +47,9 @@
     3. Queues
     4. Files
 
+
+
+
+<!-- Markdown Links-->
+
+[azure-doc]: https://azure.microsoft.com/pt-br/products/

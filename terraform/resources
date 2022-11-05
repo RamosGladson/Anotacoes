@@ -1,0 +1,9 @@
+resource "azurerm_resource_group" "mypg" {
+  name = "PrimeiroRG"
+  location = "Brazil South"
+   
+  tags {
+    Name= "Primeiro
+    environment = "dev"
+  }
+}

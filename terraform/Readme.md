@@ -1,4 +1,6 @@
 # Terraform
+> Declarative language
+
 
 ## O Que é terraform
 
@@ -99,6 +101,16 @@ terraform {
 }
 
 ```
+
+> Providers
+
+- Aws
+- Azure
+- Kubernetes
+- Etc
+
+
+
 
 
 ## Terraform cli
