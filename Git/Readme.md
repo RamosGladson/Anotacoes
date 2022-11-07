@@ -15,9 +15,10 @@ git status           // mostra o status do git.
 git add file.txt     // adiciona o arquivo file.txt.
 git add .            // adiciona todos os arquivos da pasta local.
 git commit -m "texto referencia do commit"  // faz o commit para os arquivos que foram adicionados previamente e passa o texto entre aspas como referencia do commit.
-git commit -am "texto"  // adiciona os arquivos untracked e faz o commit.
-git show hash        // detalha o hash
-git log              // mostra log.
+git commit -am "texto"      // adiciona os arquivos untracked e faz o commit.
+git show hash               // detalha o hash
+git log                     // mostra log.
+git log --patch             // detalha log.
 git log --author="Gladson"  // mostra log do autor Gladson.
 git shortlog         // mostra log resumido.
 git log --graph      // log formato gráfico.
