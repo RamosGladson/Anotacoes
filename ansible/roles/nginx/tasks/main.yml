@@ -1,0 +1,24 @@
+---
+# tasks file for nginx
+- name: elpe release install
+  yum: name=epel-releas state=present
+
+- name: nginx install
+  yum:
+    name: nginx
+    state: latest 
+
+- name: nginx.conf config
+  copy:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+
+- name: make dir conf.d
+  file:
+    path: /etc/nginx/conf.d
+    state: directory
+    mode: 0755
