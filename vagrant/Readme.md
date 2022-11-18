@@ -25,3 +25,57 @@ vagrant status                           | show vm status
 
 
 ```
+
+## Vagrantfile
+> Vagrant configuration file
+
+
+* [configure][configure-docs]
+> makes an object with configuration "1" or "2"
+
+```
+Vagrant.configure("2") do |config|                                       
+  # ...
+end
+```
+
+* [config][config-docs]
+
+```
+$script = <<-SCRIPT
+echo I am provisioning...
+date > /etc/vagrant_provisioned_at
+SCRIPT
+
+
+Vagrant.configure("2") do |config|
+  config.disksize.size = "50GB"                                                     | one way to resize disk (this way, all config objects)
+  config.vm.provision "shell", path: "https://example.com/provisioner.sh"
+  config.vm.provision "shell", inline: $script
+  config.vm.provision "shell", path: "./script"
+  config.vm.provision "shell", inline: "echo hello world"
+  config.vm.define "xyz" do |abcd|                                                  | object object abcd inherited config configuration
+    abcd.vm.box = "ubuntu/trusty64"                                                 | "xyz" used for ssh, abcd only in this scope
+    abcd.vm.hostname = "asdfg"                                                      | set "asdfg" at /ect/hostname and 127.0.0.1  asdfg   at /etc/hosts
+    abcd.vm.network "public_network", brigde: "ens01", ip: "10.10.30.3"             | set bridge at ens01
+    abcd.vm.network "public_network", brigde: "ens01", type: "dhcp"                 | set bridge with dhcp
+    abcd.vm.disk :disk, size: "100GB", primary: true                                | another way to resize disk
+    abcd.vm.disk :disk, size: "10GB", name "extra_disk"                             | attaching new disk
+    (0..3).each do |i|
+      abc.vm.disk :disk, size: "10GB", name: "disk-#{i}"                            | attaching extra disks with ruby
+    end
+    abcd.vm.disk :dvd, name: "xyziso", file: "./xyziso.iso"                         | attaching an iso as an optical driver 
+  end
+
+end
+
+```
+
+
+
+
+<!--  Links  -->
+
+
+[configure-docs]: https://developer.hashicorp.com/vagrant/docs/vagrantfile/version
+[config-docs]: https://developer.hashicorp.com/vagrant/docs/vagrantfile/machine_settings
