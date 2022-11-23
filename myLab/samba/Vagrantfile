@@ -2,9 +2,9 @@ Vagrant.configure("2") do |config|
     (0..1).each do |i|
         config.vm.define "#{i}" do |zero|
             zero.vm.box = "ubuntu/bionic64"
+            zero.vm.hostname = "zero#{i}"
             zero.vm.network "public_network", bridge: "enp12s0", ip: "192.168.0.1#{i}"
             zero.vm.provision "shell", inline: <<-SHELL
-              echo "zero#{i}" > /etc/hostname
 	      echo "192.168.0.10    zero0.mydc  zero0" >> /etc/hosts
 	      echo "192.168.0.11    zero1.mydc  zero1" >> /etc/hosts
 	      apt update
@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 #              ./teste.sh
               reboot
             SHELL
-            zero.vm.provision "shell", path: "teste.sh"
+#            zero.vm.provision "shell", path: "/vagrant/teste.sh"
         end
     end
 end
