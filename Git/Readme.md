@@ -134,7 +134,7 @@ git push origin master -u    // envia os arquivos, parametro -U marca origin com
 ```
 ou com troca de chaves
 ```
-git remote add origin git@github.com/usuario/exemplo.git
+git remote add origin git@github.com:usuario/exemplo.git
 git push origin master -u    // envia os aruivos, parametro -U marca origin como padrão
 ```
 
