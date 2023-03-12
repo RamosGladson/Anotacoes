@@ -1,18 +1,6 @@
-$script = <<-SCRIPT
-echo "voce é luz, é raio, estrela e luar"
-date > ./vagrant_provisioned_at
-SCRIPT
-
 Vagrant.configure("2") do |config|
-  config.vm.define "dba" do |dbb|
-    dbb.vm.box = "ubuntu/trusty64"
-    dbb.vm.hostname = "myDB"
-    dbb.vm.network "public_network", bridge: "ens01", ip: "192.168.0.21"
-    dbb.vm.provision "shell", inline: "echo hello world"
-  end
-  config.vm.define "worlda" do |worldb|
-    worldb.vm.box = "ubuntu/trusty64"
-    worldb.vm.hostname = "myWorld"
-    worldb.vm.network "public_network", bridge: "ens01", ip: "192.168.0.22"
+  config.vm.define "teste3" do |teste2|
+    teste2.vm.box = "ubuntu/focal64"
+    teste2.vm.network "public_network", bridge: "wlp0s20f3", ip: "192.168.0.6"
   end
 end 
