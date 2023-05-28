@@ -13,30 +13,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.educandoweb.course.entities.Order;
-import com.educandoweb.course.services.OrderService;
+import com.educandoweb.course.entities.Category;
+import com.educandoweb.course.services.CategoryService;
 
 @RestController
-@RequestMapping("/orders")
-public class OrderResource {
+@RequestMapping("/categories")
+public class CategoryResource {
 
     @Autowired
-    private OrderService orderService;
+    private CategoryService categoryService;
 
     @GetMapping("/all")
-    public ResponseEntity<List<Order>> listOrders() {
-        List<Order> orders = orderService.listAllOrders();
-        return ResponseEntity.ok().body(orders);
+    public ResponseEntity<List<Category>> listCategories() {
+        return ResponseEntity.ok().body(categoryService.listAllCategories());
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Order> addOrder(@RequestBody Order order) {
-        return new ResponseEntity<>(orderService.addOrder(order), HttpStatus.CREATED);
+    public ResponseEntity<Category> addCategory(@RequestBody Category category) {
+        return new ResponseEntity<>(categoryService.addCategory(category), HttpStatus.CREATED);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<Order>> listById(@PathVariable Long id) {
-        return ResponseEntity.ok().body(orderService.listById(id));
+    public ResponseEntity<Optional<Category>> findById(@PathVariable Long id) {
+        return ResponseEntity.ok().body(categoryService.listById(id));
     }
 
 }

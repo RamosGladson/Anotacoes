@@ -13,30 +13,28 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.educandoweb.course.entities.Order;
-import com.educandoweb.course.services.OrderService;
+import com.educandoweb.course.entities.Product;
+import com.educandoweb.course.services.ProductService;
 
 @RestController
-@RequestMapping("/orders")
-public class OrderResource {
+@RequestMapping("/products")
+public class ProductResource {
 
     @Autowired
-    private OrderService orderService;
+    private ProductService productService;
 
     @GetMapping("/all")
-    public ResponseEntity<List<Order>> listOrders() {
-        List<Order> orders = orderService.listAllOrders();
-        return ResponseEntity.ok().body(orders);
+    public ResponseEntity<List<Product>> listAllProducts() {
+        return ResponseEntity.ok().body(productService.listAll());
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Order> addOrder(@RequestBody Order order) {
-        return new ResponseEntity<>(orderService.addOrder(order), HttpStatus.CREATED);
+    public ResponseEntity<Product> addProduct(@RequestBody Product product) {
+        return new ResponseEntity<>(productService.addProduct(product), HttpStatus.CREATED);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<Order>> listById(@PathVariable Long id) {
-        return ResponseEntity.ok().body(orderService.listById(id));
+    public ResponseEntity<Optional<Product>> listById(@PathVariable Long id){
+        return ResponseEntity.ok().body(productService.listById(id));
     }
-
 }
