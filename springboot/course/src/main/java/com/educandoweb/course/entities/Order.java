@@ -105,4 +105,12 @@ public class Order implements Serializable {
         return this.items;
     }
 
+    public Double getTotal() {
+        Double subTotal = 0.0;
+        for (OrderItem item : items) {
+            subTotal += item.getSubTotal();
+        }
+        return subTotal;
+    }
+
 }
