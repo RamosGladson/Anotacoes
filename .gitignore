@@ -28,6 +28,7 @@ website/node_modules
 *.iml
 .env
 website/vendor
+config.properties
 
 # Test exclusions
 !command/test-fixtures/**/*.tfstate
