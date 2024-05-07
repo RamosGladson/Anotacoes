@@ -1,29 +1,45 @@
 @extends('templates.template')
 
 @section('content')
-<h1 class='text-center'>Cadastrar</h1>
+<h1 class='text-center'>
+
+    @if(isset($book))
+    Editar
+    @else
+    Cadastrar
+    @endif
+
+
+</h1>
 <hr>
 
 <div class='col-8 m-auto'>
     @if(isset($errors) && count($errors)>0)
     <div class="text-center mt-4 mb-4 p-2">
         @foreach($errors->all() as $erro)
-            {{$erro}}<br>
+        {{$erro}}<br>
         @endforeach
     </div>
     @endif
+
+    @if(isset($book))
+    <form name='formEdit' id='formCad' method='post' action='{{url("books/$book->id")}}'>
+        @method('PUT')
+    @else
     <form name='formCad' id='formCad' method='post' action='{{url("books")}}'>
+    @endif
+
         @csrf
-        <input class='form-control' type='text' name='title' id='title' placeholder='Título:' required></br>
+        <input class='form-control' type='text' name='title' id='title' placeholder='Título:' value='{{$book->title ?? ""}}' required></br>
         <select class='form-control' name='id_user' id='id_user' required>
-            <option value=''>Autor</option>
+            <option value='{{$book->relUsers->id ?? ""}}'>{{$book->relUsers->name ?? "Autor"}}</option>
             @foreach($users as $user)
             <option value='{{$user->id}}'>{{$user->name}}</option>
             @endforeach
         </select></br>
-        <input class='form-control' type='text' name='pages' id='pages' placeholder='Paginas:' required></br>
-        <input class='form-control' type='text' name='price' id='price' placeholder='Preço:' required></br>
-        <input class='btn btn-primary' type='submit' value='Cadastrar'></br>
+        <input class='form-control' type='text' name='pages' id='pages' placeholder='Paginas:' value='{{$book->pages ?? ""}}' required></br>
+        <input class='form-control' type='text' name='price' id='price' placeholder='Preço:' value='{{$book->price ?? ""}}' required></br>
+        <input class='btn btn-primary' type='submit' value='@if(isset($book)) Editar @else Cadastrar @endif'></br>
     </form>
 </div>
 

@@ -148,6 +148,18 @@ class BookController extends Controller
 -----------------------------------------
 ```
 
+** Metodos PUT, PATCH e DELETE
+>[Form Method Spoofing][spoofing-method]
+>Não há suporte para put, patch e delete em formularios html, a notação @method é necessária confomre exemplo abaixo:
+
+```
+<form action="/example" method="POST">
+    @method('PUT')
+    @csrf
+</form>
+```
+
+
 * Request
 >É possível criar regras de requisições
 
@@ -206,7 +218,7 @@ use App\Http\Requests\BookRequest;                            || adicionar BookR
 >[Laravel pt-BR][laravel-pt-br]
 >[Laravel demais locais][laravel-demais]
 
-````
+```
 php artisan lang:publish
 composer require lucascudo/laravel-pt-br-localization --dev
 php artisan vendor:publish --tag=laravel-pt-br-localization
@@ -317,3 +329,4 @@ php artisan make:request BookRequest                                    || cria 
 [laravel-pt-br]: https://github.com/lucascudo/laravel-pt-BR-localization
 [laravel-demais]: https://github.com/Laravel-Lang/lang
 [mensagens-persolnalizada]: https://laravel.com/docs/11.x/validation#customizing-the-error-messages
+[spoofing-method]: https://laravel.com/docs/11.x/routing#form-method-spoofing
