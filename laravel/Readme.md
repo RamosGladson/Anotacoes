@@ -148,7 +148,7 @@ class BookController extends Controller
 -----------------------------------------
 ```
 
-** Metodos PUT, PATCH e DELETE
+** Metodos PUT, PATCH e DELETE com formulario
 >[Form Method Spoofing][spoofing-method]
 >Não há suporte para put, patch e delete em formularios html, a notação @method é necessária confomre exemplo abaixo:
 
@@ -158,6 +158,60 @@ class BookController extends Controller
     @csrf
 </form>
 ```
+
+** Metodo delete
+1. Criar pasta para java script dentro de public/assets/js
+
+```
+(function(win, doc){
+    'use strict';
+
+    function confirmDel(event){
+        event.preventDefault();
+        let token = doc.getElementsByName('_token')[0].value;
+        if(confirm('Deseja excluir?')){
+            let ajax = new XMLHttpRequest();
+            ajax.open('DELETE',event.target.parentNode.href);
+            ajax.setRequestHeader('X-CSRF-TOKEN', token)
+            ajax.onreadystatechange=function(){
+                console.log("deu certo")
+                if(ajax.readyState === 4 && ajax.status === 200){
+                    win.location.href='books';
+                }
+            }
+            ajax.send();
+        }else{
+            return false;
+        }
+    }
+
+    if(doc.querySelector('.js-del')){
+        let btn=doc.querySelectorAll('.js-del');
+        for(let i=0; i<btn.length; i++){
+            btn[i].addEventListener('click',confirmDel,false);
+        }
+    }
+
+
+})(window, document)
+```
+2. Em index.blade.pjp, acima da tabela adicionar @csrf
+
+3. Adicionar url ao botão
+```
+<a href='{{url("books/$book->id")}}'>
+<button class="btn btn-danger">Deletar</button>
+</a>
+```
+4. BookController
+```
+public function destroy(string $id)
+{
+    $del=$this->objBook->destroy($id);
+    return($del)?'sim':'nao';
+}
+```
+
 
 
 * Request
