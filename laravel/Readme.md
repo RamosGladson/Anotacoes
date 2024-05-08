@@ -1,11 +1,11 @@
 # Laravel
->[Documentação:][laravel-doc]
->[Curso CRUD YT][crud-yt]
+>[Documentação][laravel-doc]  |
+>|  [Curso CRUD YT][crud-yt]
 
 
 ### MVC
 
-* Model
+**Model**
 
 class ModelBook extends Model
 {
@@ -19,13 +19,13 @@ class ModelBook extends Model
 }
 
 
-* View
+**View**
 >resources\view
 Interface de interação com o usuário
 ** Padrão de nomenclatura:
 nome.blade.php
 
-** Template
+_Template_
 1. Criar pasta templates dentro de resources\view
 2. Gerar um template dentro de body dar um nome a esse template:
 ```
@@ -55,7 +55,7 @@ nome.blade.php
 
 ```
 
-** foreach
+_foreach_
 
 ```
 @foreach($books as $book)
@@ -70,7 +70,7 @@ nome.blade.php
 
 ```
 
-** required
+_required_
 >obriga o usuário a preencher o campo
 
 ```
@@ -92,9 +92,9 @@ nome.blade.php
 ```
 
 
-* Rotas
->[Handler][handler]
->routes\web.php
+**Rotas**
+>[Handler][handler]  |
+>|  routes\web.php
 ```
 Route::get('/books', function () {
     return view('index'); // aponta para resources\views\index.blade.php
@@ -107,7 +107,7 @@ Route::resource('books', BookController::class);            || uri/books aponta 
 
 ```
 
-* Controller
+**Controller**
 ```
 -----------------------------------------
 class BookController extends Controller
@@ -149,8 +149,8 @@ class BookController extends Controller
 ```
 
 ** Metodos PUT, PATCH e DELETE com formulario
->[Form Method Spoofing][spoofing-method]
->Não há suporte para put, patch e delete em formularios html, a notação @method é necessária confomre exemplo abaixo:
+>[Form Method Spoofing][spoofing-method]  |
+>|  Não há suporte para put, patch e delete em formularios html, a notação @method é necessária confomre exemplo abaixo:
 
 ```
 <form action="/example" method="POST">
@@ -159,7 +159,7 @@ class BookController extends Controller
 </form>
 ```
 
-** Metodo delete
+_Metodo delete_
 1. Criar pasta para java script dentro de public/assets/js
 
 ```
@@ -214,7 +214,7 @@ public function destroy(string $id)
 
 
 
-* Request
+**Request**
 >É possível criar regras de requisições
 
 ```
@@ -247,7 +247,8 @@ class BookRequest extends FormRequest
 
 
 ```
-[Regras de validação][validation-rules]
+_Validação_
+>[Regras de validação][validation-rules]
 
 BookController
 ``` 
@@ -267,10 +268,10 @@ use App\Http\Requests\BookRequest;                            || adicionar BookR
     }
 ```
 
-** Linguagem
->[Laravel language][laravel-language]
->[Laravel pt-BR][laravel-pt-br]
->[Laravel demais locais][laravel-demais]
+_Linguagem_
+>[Laravel language][laravel-language]  |
+>|  [Laravel pt-BR][laravel-pt-br]  |
+>|  [Laravel demais locais][laravel-demais]
 
 ```
 php artisan lang:publish
@@ -296,7 +297,7 @@ ou
 e alterar APP_LOCALE com o nome da pasta no arquivo .env
 ```
 
-** Mensagens personalizadas
+_Mensagens personalizadas_
 [Doc]:[mensagens-persolnalizada]
 
 BookRequest
@@ -360,16 +361,85 @@ php artisan make:controller BookController --resource                   || cria 
 php artisan make:model ModelBook -m                                     || cria model book e a migration
 php artisan migrate                                                     || roda os scripts de banco
 php artisan make:request BookRequest                                    || cria arquivo de validação de requisições
-
-
+php artisan make:seeder BookSeeder                                      || cria o alimentador de banco para testes
+php artisan db:seed                                                     || execulta o seed
 ```
 
 
 ### Requisitos
-> Primeiro instalar php e fazer o apontamento da versão instalada na instalação do composer
+> Primeiro instalar php e fazer o apontamento da versão instalada na instalação do composer  |
+>|  [PHP][php]  |
+>|  [COMPOSER][composer]
 
-[PHP][php]
-[COMPOSER][composer]
+### Seeder
+>Alimenta banco com informações para testes
+
+database/BookSeeder.php
+```
+use App\Models\ModelBook;
+
+class BookSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(ModelBook $book): void
+    {
+        $book->create([
+            'title'=>'livro um',
+            'pages'=>200,
+            'price'=>10.59,
+            'id_user'=>1
+        ]);
+        $book->create([
+            'title'=>'livro dois',
+            'pages'=>300,
+            'price'=>30.59,
+            'id_user'=>1
+        ]);
+        $book->create([
+            'title'=>'livro três',
+            'pages'=>250,
+            'price'=>18.59,
+            'id_user'=>1
+        ]);
+    }
+}
+```
+database\DatabaseSeeder
+````
+class DatabaseSeeder extends Seeder
+{
+    public function run(): void
+    {
+        $this->call(BookSeeder::class);
+    }
+}
+
+```
+
+### Paginação
+>BookController.php
+```
+     */
+    public function index()
+    {
+        $books=$this->objBook->paginate(10); // busca 10 livros por página
+        return view('index', compact('books')); //devolve index.blade.php passando a variável books
+    }
+
+```
+index.blade.php
+```
+[...]
+  </tbody>
+</table>
+
+{{$books->links()}}                 | cria rodapé com paginação
+</div>
+
+@endsection
+```
 
 
 <!-- Markdown Links -->

@@ -22,7 +22,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books=$this->objBook->all(); // busca todos os livros
+        $books=$this->objBook->paginate(10); // busca 10 livros por página
         return view('index', compact('books')); //devolve index.blade.php passando a variável books
     }
 

@@ -50,6 +50,7 @@
   </tbody>
 </table>
 
+{{$books->links()}}
 </div>
 
 @endsection
