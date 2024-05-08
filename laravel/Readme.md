@@ -93,8 +93,8 @@ _required_
 
 
 **Rotas**
->[Handler][handler]  |
->|  routes\web.php
+>[Handler][handler]  
+>routes\web.php
 ```
 Route::get('/books', function () {
     return view('index'); // aponta para resources\views\index.blade.php
@@ -149,8 +149,8 @@ class BookController extends Controller
 ```
 
 ** Metodos PUT, PATCH e DELETE com formulario
->[Form Method Spoofing][spoofing-method]  |
->|  Não há suporte para put, patch e delete em formularios html, a notação @method é necessária confomre exemplo abaixo:
+>[Form Method Spoofing][spoofing-method]  
+>Não há suporte para put, patch e delete em formularios html, a notação @method é necessária confomre exemplo abaixo:
 
 ```
 <form action="/example" method="POST">
@@ -269,10 +269,9 @@ use App\Http\Requests\BookRequest;                            || adicionar BookR
 ```
 
 _Linguagem_
->[Laravel language][laravel-language]  |
->|  [Laravel pt-BR][laravel-pt-br]  |
->|  [Laravel demais locais][laravel-demais]
-
+>[Laravel language][laravel-language]  
+>[Laravel pt-BR][laravel-pt-br]  
+>[Laravel demais locais][laravel-demais]  
 ```
 php artisan lang:publish
 composer require lucascudo/laravel-pt-br-localization --dev
@@ -367,9 +366,9 @@ php artisan db:seed                                                     || execu
 
 
 ### Requisitos
-> Primeiro instalar php e fazer o apontamento da versão instalada na instalação do composer  |
->|  [PHP][php]  |
->|  [COMPOSER][composer]
+> Primeiro instalar php e fazer o apontamento da versão instalada na instalação do composer  
+>[PHP][php]  
+>[COMPOSER][composer]  
 
 ### Seeder
 >Alimenta banco com informações para testes
