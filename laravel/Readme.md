@@ -407,7 +407,7 @@ class BookSeeder extends Seeder
 }
 ```
 database\DatabaseSeeder
-````
+```
 class DatabaseSeeder extends Seeder
 {
     public function run(): void
