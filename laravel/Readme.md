@@ -296,8 +296,8 @@ ou
 e alterar APP_LOCALE com o nome da pasta no arquivo .env
 ```
 
-_Mensagens personalizadas_
-[Doc]:[mensagens-persolnalizada]
+_Mensagens personalizadas_  
+>[Doc][mensagens-persolnalizada]
 
 BookRequest
 ```
