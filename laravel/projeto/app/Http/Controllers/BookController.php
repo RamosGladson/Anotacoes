@@ -8,21 +8,12 @@ use App\Models\User;
 
 class BookController extends Controller
 {
-
-    private $objUser;
-    private $objBook;
-
-    public function __construct(){
-        $this->objUser=new User();
-        $this->objBook=new ModelBook();
-    }
-
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $books=$this->objBook->paginate(10); // busca 10 livros por página
+        $books=ModelBook::paginate(10); // busca 10 livros por página
         return view('index', compact('books')); //devolve index.blade.php passando a variável books
     }
 
@@ -31,7 +22,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        $users=$this->objUser->all();
+        $users=ModelBook::all();
         return view('create', compact('users'));
     }
 
@@ -40,7 +31,7 @@ class BookController extends Controller
      */
     public function store(BookRequest $request)
     {
-        $cad=$this->objBook->create([
+        $cad=ModelBook::create([
             'title'=>$request->title,
             'pages'=>$request->pages,
             'price'=>$request->price,
@@ -56,7 +47,7 @@ class BookController extends Controller
      */
     public function show(string $id)
     {
-        $book=$this->objBook->find($id);
+        $book=ModelBook::find($id);
         return view('show', compact('book'));
     }
 
@@ -65,8 +56,8 @@ class BookController extends Controller
      */
     public function edit(string $id)
     {
-        $book=$this->objBook->find($id);
-        $users=$this->objUser->all();
+        $book=ModelBook::find($id);
+        $users=ModelBook::all();
         return view('create', compact('book', 'users'));
     }
 
@@ -75,7 +66,7 @@ class BookController extends Controller
      */
     public function update(BookRequest $request, string $id)
     {
-        $this->objBook->where(['id' => $id])->update([
+        ModelBook::where(['id' => $id])->update([
                 'title'=>$request->title,
                 'pages'=>$request->pages,
                 'price'=>$request->price,
@@ -89,7 +80,7 @@ class BookController extends Controller
      */
     public function destroy(string $id)
     {
-        $del=$this->objBook->destroy($id);
+        $del=ModelBook::destroy($id);
         return($del)?'sim':'nao';
     }
 }
