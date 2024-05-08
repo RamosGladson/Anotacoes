@@ -1,6 +1,6 @@
 # Laravel
->[Documentação][laravel-doc]  |
->|  [Curso CRUD YT][crud-yt]
+>[Documentação][laravel-doc]  
+>[Curso CRUD YT][crud-yt]
 
 
 ### MVC
