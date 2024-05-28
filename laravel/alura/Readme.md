@@ -242,14 +242,79 @@ config                              | configurações
 bootstrap                           | bootstrap de inicio
 app                                 | nosso código
 
+# Database
+
+## Migrations
+> Versionador de banco de dados
+
+```
+php artisan make:migration          | Cria uma migração já com a criação da tabela series
+```
+
+## ORM
+
+```
+php artisan make:model Serie        | Cria um ORM para tabela series
+
+Arquivo adicionado em app/Models/Serie.php
+
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Serie extends Model
+{
+    use HasFactory;
+
+    protected $table = 'seriado';   | Não obrigatório, por padrão seria mapeado a tabela series
+    
+    public $timestamps = false;     | Caso não queira guardar timestamps
+}
+```
+
+### Query Scopes
+
+```
+public function index(Request $request)
+    {        
+        $series = Serie::query()->orderBy('nome')->get();   | Ordena por ordem alfabetica
+        $series = Serie::all();                             | Retorna colection com todos
+
+        return view("series.index", compact('series'));
+    }
+
+public function store(Request $request)
+    {
+
+        $serie = new Serie();
+        $serie->nome = $request->input('nome');
+        $serie->save(); 
+
+        return redirect('/series');
+
+
+    }
+```
 
 # Comandos
-
-
 ```
 composer create-project laravel/laravel controle-series
 php artisan lang:publish    
 php artisan serve --host=127.0.0.1 --port=12000       
-php artisan make:controller SeriesController --resource             || cria controller já com crud   
-php artisan make:component Layout                      
+php artisan make:controller SeriesController --resource             | cria controller já com crud   
+php artisan make:component Layout 
+php artisan make:model Serie                                        | cria um orm para tabela series                     
+```
+
+> Ao baixar projeto um projeto laravel
+
+```
+composer install                | Instalará todas as dependências listadas no arquivo composer.json.
+cp .env.example .env            
+php artisan key:generate        | Isso irá atualizar o arquivo .env com uma chave de aplicativo aleatória.
+php artisan migrate             | Isso criará as tabelas definidas pelas migrações no banco de dados.
+php artisan serve               | Isso iniciará um servidor de desenvolvimento local na porta padrão 8000.
 ```
